@@ -7,6 +7,7 @@
 #import <HockeySDK/HockeySDK.h>
 #import <UIDeviceIdentifier/UIDeviceHardware.h>
 #import <Helpshift/Helpshift.h>
+#import <Taplytics/Taplytics.h>
 
 #import "WordPressAppDelegate.h"
 #import "ContextManager.h"
@@ -127,6 +128,8 @@ static NSInteger const IndexForMeTab = 2;
     
     [self showWelcomeScreenIfNeededAnimated:NO];
 
+    [Taplytics startTaplyticsAPIKey:@"9f7ac3d13b5b05eb2a1764535b1fe09eeaa7f705"];
+    
     [Helpshift installForApiKey:[WordPressComApiCredentials helpshiftAPIKey] domainName:[WordPressComApiCredentials helpshiftDomainName] appID:[WordPressComApiCredentials helpshiftAppId]];
     
     return YES;
